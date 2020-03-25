@@ -38,7 +38,7 @@ export default {
   },
   computed: {
     filteredTodos () {
-      if (this.filter === 'all'){
+      if (this.filter === 'all') {
         return this.todos
       }
       const completed = this.filter === 'completed'
@@ -48,7 +48,7 @@ export default {
   methods: {
     addTodo (e) {
       this.todos.unshift({
-        id: id ++ ,
+        id: id++,
         content: e.target.value.trim(),
         completed: false
       })

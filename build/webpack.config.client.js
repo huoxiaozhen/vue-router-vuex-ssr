@@ -1,5 +1,5 @@
 'use strict'
-//'path'是nodeJs里面的基本包
+//  'path'是nodeJs里面的基本包
 const path = require('path')
 const HTMLPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
@@ -20,7 +20,7 @@ const defaultPlugins = [
 
 const devServer = {
   port: 8000,
-  host: '0.0.0.0',
+  host: 'localhost',
   overlay: {
     // 编译中出错了直接在页面上显示错误
     errors: true
@@ -80,7 +80,7 @@ if (isDev) {
               {
                 loader: 'postcss-loader',
                 options: {
-                  sourceMap: true,
+                  sourceMap: true
                 }
               },
               'stylus-loader'

@@ -3,7 +3,6 @@
     <span>Writen by Mark</span>
   </div>
 </template>
-
 <style lang="stylus" scoped>
 #footer{
   margin-top 40px
