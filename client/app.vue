@@ -2,11 +2,16 @@
 	<div id="app">
 		<div id="cover"></div>
     <Header></Header>
-    <todo></todo>
+    <p>{{fullName}} --- {{count}}</p>
+    <router-link to='/app'>app</router-link>
+    <router-link to="/login">login</router-link>
+    <!-- <todo></todo> -->
+    <router-view/>
     <Footer></Footer>
 	</div>
 </template>
 <script>
+import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
 import Header from './layout/header.vue'
 import Footer from './layout/footer.vue'
 import Todo from './views/todo/todo.vue'
@@ -20,6 +25,20 @@ export default {
     return {
 
     }
+  },
+  mounted () {
+    this.updateCountAsync({
+      num: 5,
+      time: 2000
+    })
+  },
+  computed: {
+    ...mapState(['count']),
+    ...mapGetters(['fullName'])
+  },
+  methods: {
+    ...mapMutations(['updateCount']),
+    ...mapActions(['updateCountAsync'])
   }
 }
 </script>

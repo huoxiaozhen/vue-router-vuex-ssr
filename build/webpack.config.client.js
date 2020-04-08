@@ -25,6 +25,9 @@ const devServer = {
     // 编译中出错了直接在页面上显示错误
     errors: true
   },
+  historyApiFallback: {
+    index: '/index.html'
+  },
   // 项目启动时自动打开浏览器
   open: true,
   // 修改某个组件时不会刷新整个页面，只刷新组件
